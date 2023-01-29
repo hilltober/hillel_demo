@@ -1,3 +1,6 @@
 1. pytest -m 'from_class or pack'
 2. pytest -m 'not from_class'
 3. pytest -m 'pack and not rest'
+
+Run with result collect: pytest --junitxml=./path/to/filename.xml
+Parse results with allure: allure generate ./path/to/
