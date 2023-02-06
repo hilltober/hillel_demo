@@ -7,7 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 @pytest.fixture(scope='class', name='demoqa', autouse=False)
 def set_browser_for_demoqa():
     options = webdriver.ChromeOptions()
-    options.headless = False
+    options.headless = True
     options.add_argument('start-maximized')
     config.driver = webdriver.Chrome(
         ChromeDriverManager().install(),

@@ -1,11 +1,16 @@
 import pytest
+from selenium import webdriver
 from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.options import Options
 
 
 @pytest.fixture(scope='class')
 def text_box(request):
-    driver = Chrome(executable_path='D:\\Drivers\\chromedriver.exe')
+    options = webdriver.ChromeOptions()
+    options.headless = True
+
+    driver = Chrome(executable_path='D:\\Drivers\\chromedriver.exe',
+                    options=options)
     driver.get('https://demoqa.com/text-box')
 
     if request.cls:
