@@ -1,3 +1,4 @@
+import pytest
 from selene import have
 from selene.support.shared import browser
 from selene.support.shared.jquery_style import s
@@ -5,6 +6,7 @@ from selene.support.shared.jquery_style import s
 from lecture_windows_frames_alerts_selene.helpers.waiters import wait_for_alert
 
 
+@pytest.mark.usefixtures('demoqa')
 class TestAlerts:
 
     def test_browser_alerts(self):
