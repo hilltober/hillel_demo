@@ -5,7 +5,7 @@ from selenium.webdriver.chrome.options import Options
 
 @pytest.fixture(scope='class')
 def text_box(request):
-    driver = Chrome()
+    driver = Chrome(executable_path='D:\\Drivers\\chromedriver.exe')
     driver.get('https://demoqa.com/text-box')
 
     if request.cls:
