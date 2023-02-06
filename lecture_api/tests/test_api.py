@@ -7,7 +7,7 @@ import pprint
 class TestAPI:
     pp = pprint.PrettyPrinter(depth=4)
 
-    @pytest.mark.get
+    @pytest.mark.api
     def test_list_users(self):
         response = requests.get('https://reqres.in/api/users?page=2')
         assert response.status_code == 200
@@ -23,7 +23,7 @@ class TestAPI:
                 record for record in parsed.get('data')]]),
         ])
 
-    @pytest.mark.get
+    @pytest.mark.api
     def test_single_user(self):
         response = requests.get('https://reqres.in/api/users/2')
         assert response.status_code == 200
@@ -38,20 +38,20 @@ class TestAPI:
             data_success, is_first_name_present,
             is_check_correct, is_avatar_present])
 
-    @pytest.mark.get
+    @pytest.mark.api
     def test_single_user_not_found(self):
         response = requests.get('https://reqres.in/api/users/23')
         assert response.status_code == 404
         assert not dict(json.loads(response.content))
 
-    @pytest.mark.get
+    @pytest.mark.api
     def test_list_resource(self):
         response = requests.get('https://reqres.in/api/unknown')
         parsed = json.loads(response.content)
         assert response.status_code == 200
         assert len(parsed.get('data')) == parsed.get('per_page')
 
-    @pytest.mark.get
+    @pytest.mark.api
     def test_single_resource(self):
         response = requests.get('https://reqres.in/api/unknown/2')
         parsed = json.loads(response.content)
@@ -59,3 +59,41 @@ class TestAPI:
         assert sorted(
             parsed.get('data').keys()) == sorted(
             ['id', 'name', 'year', 'color', 'pantone_value'])
+
+    @pytest.mark.api
+    def test_with_auth(self):
+        username = 'postman'
+        password = 'password'
+        url = 'https://postman-echo.com/basic-auth'
+        headers = {
+            'Authorization': f'Basic {encode_base64(username, password)}==',
+        }
+        response = requests.get(url, headers=headers)
+        assert json.loads(response.text).get('authenticated')
+
+    @pytest.mark.api
+    def test_post_example(self):
+        url = "https://www.example.com"
+        headers = {
+            "User-Agent": "MyApp/1.0",
+            "Accept-Encoding": "gzip, deflate",
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        }
+        data = {"key": "value"}
+        response = requests.post(url, headers=headers, json=data)
+        print(response.text)
+
+
+def encode_base64(username: str, password: str) -> str:
+    import base64
+    credentials = f'{username}:{password}'
+    encoded = base64.b64encode(credentials.encode()).decode()
+    return encoded
+
+
+def decode_base64(string: str) -> str:
+    import base64
+    decoded_bytes = base64.b64decode(string)
+    decoded_string = decoded_bytes.decode()
+    return decoded_string
