@@ -72,7 +72,7 @@ class TestAPI:
         assert json.loads(response.text).get('authenticated')
 
     @pytest.mark.api
-    def test_post_example(self):
+    def test_post_example_1(self):
         url = "https://www.example.com"
         headers = {
             "User-Agent": "MyApp/1.0",
@@ -82,6 +82,15 @@ class TestAPI:
         }
         data = {"key": "value"}
         response = requests.post(url, headers=headers, json=data)
+        print(response.text)
+
+    @pytest.mark.api
+    def test_post_example_2(self):
+        url = 'https://reqres.in/api/users'
+        data = {'name': 'morpheus',
+                'job': 'leader'}
+        response = requests.post(url, json=data)
+        assert json.loads(response.text).get('id')
         print(response.text)
 
 
