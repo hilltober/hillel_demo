@@ -1,7 +1,7 @@
-# Basic authentication
 import requests
 
 
+# Basic authentication
 def test_basic_auth():
     response = requests.get('https://api.example.com/protected',
                             auth=('username', 'password'))
@@ -9,9 +9,6 @@ def test_basic_auth():
 
 
 # Token-based authentication
-import requests
-
-
 def test_token_auth():
     headers = {'Authorization': 'Bearer <token>'}
     response = requests.get('https://api.example.com/protected',
@@ -20,9 +17,6 @@ def test_token_auth():
 
 
 # OAuth2 authentication
-import requests
-
-
 def test_oauth2_auth():
     access_token = '<access_token>'
     headers = {'Authorization': f'Bearer {access_token}'}
