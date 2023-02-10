@@ -47,17 +47,23 @@ def test_delete_user():
     response = requests.delete("https://api.example.com/users/1")
     assert response.status_code == 204
 
-# In this example, the requests library is used to send HTTP requests
-# to the API. The requests.get method is used to send GET requests,
-# requests.post to send POST requests, requests.put to send PUT requests,
-# and requests.delete to send DELETE requests.
-# The response.status_code attribute is used to verify the HTTP status code
-# of the response, and the response.json method is used
-# to parse the JSON response. The assert statement is used to verify that
-# the response is as expected.
-#
-# By using Pytest and the requests library, it's possible to write tests
-# for a REST API in a simple and straightforward manner.
-# You can also use Pytest fixtures to set up and tear down resources
-# required by the tests, as well as to share data between tests.
-# This can help to make your tests more modular and reusable.
+# У цьому прикладі бібліотека requests використовується для надсилання
+# запитів HTTP до API.
+# requests.get використовується для надсилання запитів GET,
+# requests.post для надсилання запитів POST,
+# requests.put для надсилання запитів PUT,
+# requests.delete для надсилання запитів DELETE.
+
+# Атрибут response.status_code використовується для перевірки коду стану HTTP
+# відповіді.
+# метод response.json використовується для аналізу відповіді JSON.
+# Для перевірки того, що відповідь відповідає очікуванням
+# використовується оператор assert
+
+# Використовуючи Pytest і бібліотеку requests, можна писати тести
+# для REST API простим і зрозумілим способом.
+# Ви також можете використовувати Pytest фікстури, щоб налаштовувати
+# та відключати ресурси необхідні для тестів, а також для обміну даними
+# між тестами.
+# Це може допомогти зробити ваші тести більш модульними
+# та придатними для повторного використання.
