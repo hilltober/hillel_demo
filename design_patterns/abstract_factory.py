@@ -79,8 +79,8 @@ if __name__ == "__main__":
 # для повернення об’єктів ConcreteProductA1, ConcreteProductB1,
 # ConcreteProductA2, та ConcreteProductB2 відповідно.
 
-# Класи AbstractProductA і AbstractProductB визначають інтерфейси
-# для продуктів A і B відповідно, у той час як класи
+# Класи AbstractProductA та AbstractProductB визначають інтерфейси
+# для продуктів A і B відповідно. У той час як класи
 # ConcreteProductA1, ConcreteProductA2, ConcreteProductB1 та ConcreteProductB2
 # забезпечують конкретні реалізації цих продуктів. Функція client_code є
 # кодом клієнта, що використовує фабрику та її продукцію.
