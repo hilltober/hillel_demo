@@ -73,14 +73,16 @@ if __name__ == "__main__":
     factory2 = ConcreteFactory2()
     client_code(factory2)
 
-# In this example, the AbstractFactory class defines the interface for creating
-# objects (i.e., create_product_a and create_product_b).
-# The ConcreteFactory1 and ConcreteFactory2 classes implement these methods
-# to return objects of ConcreteProductA1, ConcreteProductB1, ConcreteProductA2,
-# and ConcreteProductB2 respectively. The AbstractProductA and AbstractProductB
-# classes define the interfaces for products A and B respectively,
-# while the ConcreteProductA1, ConcreteProductA2, ConcreteProductB1,
-# and ConcreteProductB2 classes provide concrete
-# implementations of these products. The client_code function is the
-# client code that uses the factory and its products.
-# The if __name__ == "__main__" block is the entry point of the program.
+# У цьому прикладі клас AbstractFactory визначає інтерфейс для створення
+# об’єктів (тобто create_product_a та create_product_b).
+# Класи ConcreteFactory1 і ConcreteFactory2 реалізують ці методи
+# для повернення об’єктів ConcreteProductA1, ConcreteProductB1,
+# ConcreteProductA2, та ConcreteProductB2 відповідно.
+
+# Класи AbstractProductA і AbstractProductB визначають інтерфейси
+# для продуктів A і B відповідно, у той час як класи
+# ConcreteProductA1, ConcreteProductA2, ConcreteProductB1 та ConcreteProductB2
+# забезпечують конкретні реалізації цих продуктів. Функція client_code є
+# кодом клієнта, що використовує фабрику та її продукцію.
+
+# Блок if __name__ == "__main__" є точкою входу програми.

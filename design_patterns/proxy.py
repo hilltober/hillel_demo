@@ -24,13 +24,14 @@ if __name__ == "__main__":
     print("Image loaded")
 
 
-# In this example, the Image class represents the real object that
-# is being proxied. The ImageProxy class acts as a proxy for Image objects,
-# and provides a simplified interface for loading images from files.
-# The load method of the ImageProxy class only loads the actual image when
-# it is first accessed.
-# The if __name__ == "__main__" block is the entry point of the program.
-# When the program is run, it creates an instance of ImageProxy and prints
-# a message indicating that the image has not been loaded yet. When the load
-# method is called, the message changes to indicate that the image
-# has been loaded.
+# У цьому прикладі клас Image представляє реальний об'єкт, який
+# виконується проксі. Клас ImageProxy діє як проксі для об’єктів Image,
+# та забезпечує спрощений інтерфейс для завантаження зображень із файлів.
+# Метод завантаження класу ImageProxy завантажує фактичне зображення лише тоді,
+# коли це перший доступ.
+
+# Блок if __name__ == "__main__" є точкою входу програми.
+
+# Коли програма запускається, вона створює екземпляр ImageProxy і друкує
+# повідомлення про те, що зображення ще не завантажено. При виклику метода load
+# повідомлення змінюється, щоб вказати, що зображення завантажено.

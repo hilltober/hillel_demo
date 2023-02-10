@@ -26,9 +26,11 @@ if __name__ == "__main__":
     pet = get_pet("cat")
     print(pet.speak())
 
-# In this example the Dog and Cat classes are concrete implementations of pets.
-# The get_pet function is a factory method that returns an instance
-# of either a Dog or a Cat based on the string argument passed to it.
-# The if __name__ == "__main__" block is the entry point of the program.
-# When the program is run, it creates instances of Dog and Cat
-# and calls their speak methods to print their respective sounds.
+# У цьому прикладі класи Dog і Cat є конкретними реалізаціями домашніх тварин.
+# Функція get_pet є фабричним методом, який повертає екземпляр
+# Собаки або Кота на основі переданого рядкового аргументу.
+
+# Блок if __name__ == "__main__" є точкою входу програми.
+
+# Коли програма запускається, вона створює екземпляри Dog та Cat
+# і викликає їхні методи speak, щоб надрукувати відповідні звуки.

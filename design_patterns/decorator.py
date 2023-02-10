@@ -38,3 +38,17 @@ if __name__ == "__main__":
 # the text "Hello, world!", and then wraps it in BoldWrapper
 # and ItalicWrapper instances. The render method of the resulting special_hello
 # instance is then called to produce the final HTML output.
+
+
+# У цьому прикладі клас TextTag є простою реалізацією текстового тегу,
+# що містить рядок тексту. Класи BoldWrapper та ItalicWrapper
+# це класи декораторів, які обгортають екземпляри TextTag і додають HTML
+# теги 'напівжирний' та 'курсив' до відтвореного тексту відповідно.
+
+# Блок if __name__ == "__main__" є точкою входу програми.
+
+# Коли програма запускається, вона створює екземпляр TextTag з
+# текстом "Hello, world!", а потім обгортає його в BoldWrapper
+# та екземпляр ItalicWrapper.
+
+# Потім викликається екземпляр для створення остаточного виводу HTML.
