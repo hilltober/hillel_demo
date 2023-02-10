@@ -4,21 +4,25 @@
 # and verify the responses.
 #
 # Here's an example of how to test a REST API with Pytest:
+import pytest
 import requests
 
 
+@pytest.mark.skip
 def test_get_users():
     response = requests.get("https://api.example.com/users")
     assert response.status_code == 200
     assert response.json()["users"]
 
 
+@pytest.mark.skip
 def test_get_user():
     response = requests.get("https://api.example.com/users/1")
     assert response.status_code == 200
     assert response.json()["user"]
 
 
+@pytest.mark.skip
 def test_create_user():
     response = requests.post("https://api.example.com/users", json={
         "name": "John Doe",
@@ -28,6 +32,7 @@ def test_create_user():
     assert response.json()["user"]
 
 
+@pytest.mark.skip
 def test_update_user():
     response = requests.put("https://api.example.com/users/1", json={
         "name": "Jane Doe",
@@ -37,6 +42,7 @@ def test_update_user():
     assert response.json()["user"]
 
 
+@pytest.mark.skip
 def test_delete_user():
     response = requests.delete("https://api.example.com/users/1")
     assert response.status_code == 204
