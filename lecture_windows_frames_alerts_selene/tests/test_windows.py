@@ -1,11 +1,11 @@
+import pytest
 from selene.core import query
-from selene.support.shared import browser, config
+from selene.support.shared import browser
 from selene.support.shared.jquery_style import s
 
 
+@pytest.mark.usefixtures('headless_firefox', 'qa')
 class TestWindows:
-    config.browser_name = 'firefox'
-    config.base_url = 'https://demoqa.com/'
 
     def test_browser_windows_1(self):
         browser.open('browser-windows')

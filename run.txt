@@ -1,0 +1,1 @@
+pytest -qq --show-capture=no --junitxml=./report/report.xml -n=16 --dist=loadscope

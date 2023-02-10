@@ -135,4 +135,5 @@ dmypy.json
 /results
 /allure-report
 /assets
+/report
 report.html

@@ -1,8 +1,10 @@
+import pytest
 from selene import have
 from selene.support.shared import browser
 from selene.support.shared.jquery_style import s
 
 
+@pytest.mark.usefixtures('demoqa')
 class TestFrames:
 
     def test_frames(self):
