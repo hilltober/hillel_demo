@@ -10,7 +10,7 @@ def set_browser_for_demoqa():
     options.headless = True
     options.add_argument('--start-maximized')
     config.driver = webdriver.Chrome(
-        ChromeDriverManager().install(),
+        executable_path=ChromeDriverManager().install(),
         options=options)
     config.base_url = 'https://demoqa.com/'
     yield
