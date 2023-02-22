@@ -1,14 +1,11 @@
-FROM python:3.8.2-buster
-
+FROM ubuntu:23.04
 LABEL maintainer="a.svarych@gmail.com"
-
-EXPOSE 9091
 
 ARG WORKDIR=/home/selenium
 WORKDIR = $WORKDIR
 RUN mkdir .local && mkdir .local/bin
 
-ADD requirements.txt .
+ADD requirements.selenium .
 ADD install_chromedriver.py .
 
 RUN useradd -ms /bin/bash selenium
@@ -16,12 +13,12 @@ RUN chown -R selenium $WORKDIR
 ENV PATH="$WORKDIR/.local/bin:$PATH"
 
 RUN python -m venv env && . ./env/bin/activate && pip install --upgrade pip setuptools wheel
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.selenium
 
 # Install google chrome
-RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 RUN echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
-RUN apt-get update && apt-get -qqy install google-chrome-stable vim mc apt-utils nano
+RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+RUN apt-get update && apt-get -qqy install google-chrome-stable
 
 # Install chromedriver
 RUN python install_chromedriver.py

@@ -1,15 +1,16 @@
 FROM jenkins/jenkins:lts
-
 EXPOSE 9090
 
 ARG WORKDIR=/home/jenkins
-
 WORKDIR = $WORKDIR
+
+USER root
+RUN apt-get update && apt-get install openjdk-11-jre-headless python3 python3-pip vim wget mc -y
+ADD requirements.jenkins .
+RUN pip install --upgrade -r requirements.jenkins
+
+ADD install_allure.py .
+RUN python install_allure.py
 
 VOLUME /project
 VOLUME /test_results
-
-USER root
-RUN apt-get update && apt-get install apt-utils vim mc -y
-
-USER jenkins
