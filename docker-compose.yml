@@ -1,0 +1,29 @@
+version: '3'
+services:
+  jenkins:
+    build:
+      context: .
+      dockerfile: Dockerfile.jenkins
+    ports:
+      - "8080:8080"
+    privileged: true
+    volumes:
+      - ./tests:/tests
+      - ./jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - selenium
+    restart: always
+
+  selenium:
+    build:
+      context: .
+      dockerfile: Dockerfile.selenium
+    ports:
+      - "5900:5900"
+    volumes:
+      - ./tests:/tests
+      - ./allure-results:/allure-results
+
+volumes:
+  jenkins_home:
