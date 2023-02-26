@@ -4,7 +4,7 @@ import pytest
 
 @pytest.mark.timed
 def test_0():
-    assert True
+    assert False
 
 
 @pytest.mark.timed
