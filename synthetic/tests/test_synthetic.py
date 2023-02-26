@@ -8,6 +8,11 @@ def test_0():
 
 
 @pytest.mark.timed
+def test_00():
+    assert True
+
+
+@pytest.mark.timed
 def test_1():
     time.sleep(1)
     pass
