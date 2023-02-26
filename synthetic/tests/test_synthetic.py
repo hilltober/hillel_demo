@@ -3,6 +3,11 @@ import pytest
 
 
 @pytest.mark.timed
+def test_0():
+    assert False
+
+
+@pytest.mark.timed
 def test_1():
     time.sleep(1)
     pass
