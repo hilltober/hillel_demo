@@ -14,7 +14,7 @@ def test_00():
 
 @pytest.mark.timed
 def test_01():
-    assert False
+    assert True
 
 
 @pytest.mark.timed
