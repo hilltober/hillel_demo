@@ -24,6 +24,9 @@ def test_oauth2_auth():
                             headers=headers)
     assert response.status_code == 200
 
+
+def test_clean():
+    pass
 # У цих прикладах бібліотека запитів використовується для надсилання запиту GET
 # до кінцевої точки API https://api.example.com/protected.
 # Тести перевіряють, що API повертає код статусу 200 OK
