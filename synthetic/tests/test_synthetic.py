@@ -9,12 +9,12 @@ def test_0():
 
 @pytest.mark.timed
 def test_00():
-    assert True
+    assert False
 
 
 @pytest.mark.timed
 def test_01():
-    assert True
+    assert False
 
 
 @pytest.mark.timed
