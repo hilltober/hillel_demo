@@ -2,6 +2,7 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 @pytest.fixture(scope='class')
@@ -9,7 +10,7 @@ def text_box(request):
     options = webdriver.ChromeOptions()
     options.headless = True
 
-    driver = Chrome(executable_path='D:\\Drivers\\chromedriver.exe',
+    driver = Chrome(executable_path=ChromeDriverManager().install(),
                     options=options)
     driver.get('https://demoqa.com/text-box')
 
