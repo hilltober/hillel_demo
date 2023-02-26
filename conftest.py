@@ -8,6 +8,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 def set_browser_for_demoqa():
     options = webdriver.ChromeOptions()
     options.headless = True
+    options.add_argument("--disable-extensions")
+    options.add_argument("--disable-gpu")
     options.add_argument('--start-maximized')
     config.driver = webdriver.Chrome(
         executable_path=ChromeDriverManager().install(),

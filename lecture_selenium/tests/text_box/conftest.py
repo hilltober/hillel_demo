@@ -9,7 +9,10 @@ from webdriver_manager.chrome import ChromeDriverManager
 def text_box(request):
     options = webdriver.ChromeOptions()
     options.headless = True
-
+    options.headless = True
+    options.add_argument("--disable-extensions")
+    options.add_argument("--disable-gpu")
+    options.add_argument('--start-maximized')
     driver = Chrome(executable_path=ChromeDriverManager().install(),
                     options=options)
     driver.get('https://demoqa.com/text-box')
@@ -32,7 +35,9 @@ def chrome():
 def chrome_headless():
     chrome_options = Options()
     chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument('--start-maximized')
     driver = Chrome(options=chrome_options)
     yield driver
     driver.quit()
