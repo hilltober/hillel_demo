@@ -1,10 +1,8 @@
 import time
-from selenium.common import WebDriverException, InvalidElementStateException, \
-    NoSuchElementException
+
+from selenium.common import WebDriverException, InvalidElementStateException
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
 
 
 def set_checkbox_state(driver: WebDriver,

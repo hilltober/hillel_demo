@@ -11,6 +11,7 @@ def get_chrome():
     options.add_argument("--disable-extensions")
     options.add_argument("--disable-gpu")
     options.add_argument('--start-maximized')
-    driver = Chrome(ChromeDriverManager().install(), options=options)
+    driver = Chrome(executable_path=ChromeDriverManager().install(),
+                    options=options)
     yield driver
     driver.quit()

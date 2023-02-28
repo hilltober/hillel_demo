@@ -38,6 +38,7 @@ def chrome_headless():
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument('--start-maximized')
-    driver = Chrome(options=chrome_options)
+    driver = Chrome(executable_path=ChromeDriverManager().install(),
+                    options=chrome_options)
     yield driver
     driver.quit()
