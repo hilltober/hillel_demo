@@ -51,3 +51,9 @@ def test_5():
 def test_6():
     time.sleep(12)
     pass
+
+
+@pytest.mark.timed
+def test_7():
+    time.sleep(12)
+    pass
