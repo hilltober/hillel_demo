@@ -4,7 +4,7 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-@pytest.fixture(scope='class', name='demoqa', autouse=False)
+@pytest.fixture(scope='package', name='demoqa', autouse=True)
 def set_browser_for_demoqa():
     options = webdriver.ChromeOptions()
     options.headless = True
@@ -13,9 +13,10 @@ def set_browser_for_demoqa():
     options.add_argument('--start-maximized')
     options.add_argument('--no-sandbox')
     options.add_argument("--disable-setuid-sandbox")
-    config.driver = webdriver.Chrome(
+    driver = webdriver.Chrome(
         executable_path=ChromeDriverManager().install(),
         options=options)
     config.base_url = 'https://demoqa.com/'
-    yield
+    config.driver = driver
+    yield driver
     browser.quit()
