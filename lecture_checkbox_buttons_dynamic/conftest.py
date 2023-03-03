@@ -1,17 +1,8 @@
 import pytest
-from selenium import webdriver
-from selenium.webdriver import Chrome
-from webdriver_manager.chrome import ChromeDriverManager
 
 
 @pytest.fixture(scope='class', autouse=True)
-def get_chrome():
-    options = webdriver.ChromeOptions()
-    options.headless = True
-    options.add_argument("--disable-extensions")
-    options.add_argument("--disable-gpu")
-    options.add_argument('--start-maximized')
-    driver = Chrome(executable_path=ChromeDriverManager().install(),
-                    options=options)
+def get_chrome(request):
+    driver = request.getfixturevalue("set_browser_for_demoqa")
     yield driver
     driver.quit()
