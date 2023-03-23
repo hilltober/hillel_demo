@@ -1,0 +1,1 @@
+# https://pyneng.readthedocs.io/ru/latest/book/23_oop_special_methods/sequence_protocol.html
