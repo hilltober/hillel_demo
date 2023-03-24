@@ -47,7 +47,6 @@ print(num1 * num2)  # 15
 print(num1 / num2)  # 1.6666666666666667
 
 
-
 class MyList(list):
     def __sub__(self, other):
         return MyList([x for x in self if x not in other])
@@ -64,6 +63,7 @@ class MyList(list):
     def __repr__(self):
         return f"MyList({super().__repr__()})"
 
+
 list1 = MyList([1, 2, 3, 4])
 list2 = MyList([3, 4, 5, 6])
 
@@ -78,4 +78,3 @@ print(result)  # MyList([1, 2, 3, 4, 3, 4, 5, 6])
 # multiply the list and print the result
 result = list1 * 3
 print(list(result))  # MyList([1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4])
-

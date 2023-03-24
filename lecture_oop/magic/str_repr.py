@@ -38,7 +38,7 @@ print(str(s2))
 # Output: "Square with side length 5"
 
 # Using __repr__ with exec() to recreate the square object
-exec_str = f"s3 = {repr(s)}"
+exec_str = f's3 = {repr(s)}'
 exec(exec_str)
 print('--')
 print(str(s3))
