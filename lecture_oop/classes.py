@@ -66,12 +66,3 @@ account_1.get_balance()
 account_1.transfer(account_2, 100)
 account_1.get_balance()
 account_2.get_balance()
-
-
-
-# vba1 = BankAccount(123, 100)
-# vba2 = BankAccount(124, 100)
-# vba1.deposit(5)
-# vba1.transfer(vba2, 50)
-# vba1.get_balance()
-# vba2.get_balance()
