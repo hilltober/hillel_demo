@@ -27,6 +27,7 @@ class BankAccount:
     def __init__(self, account_number: int, balance: int):
         self.account_number = account_number
         self.balance = balance
+        self.cls = self.__class__.__name__
 
     def deposit(self, amount: int) -> None:
         if amount > 0:
@@ -48,7 +49,7 @@ class BankAccount:
         print(f"Account {self.account_number} balance is {self.balance}.")
         return self.balance
 
-    def transfer(self, other_account, amount: int) -> None:
+    def transfer(self, other_account: 'BankAccount', amount: int) -> None:
         if self.balance >= amount:
             self.balance -= amount
             other_account.balance += amount
