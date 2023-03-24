@@ -1,29 +1,34 @@
-# simple class
-class BankAccount:
-    bank_name = 'Monobank'
-
-    def __init__(self, account_number, balance):
-        self.account_number = account_number
-        self.balance = balance
-
-
-vba = BankAccount(123, 100)
-print(vba.balance)
-vba.balance -= 5
-vba.balance += 2
-print(vba.balance)
-print(type(vba))
+# # simple class
+# class BankAccount:
+#     bank_name = 'Monobank'
+#
+#     def __init__(self, account_number: int = None, balance: int = None, name=None):
+#         self.account_number = account_number
+#         self.balance = balance
+#         if name:
+#             self.bank_name = name
+#
+#
+# print(BankAccount.bank_name)
+# print(BankAccount().bank_name)
+#
+# # vba = BankAccount(123, 100)
+# # print(vba.balance)
+# # vba.balance -= 5
+# # vba.balance += 2
+# # print(vba.balance)
+# # print(type(vba))
 
 
 # exit(0)
-
+#
 # With methods
-class BankAccount1:
-    def __init__(self, account_number, balance):
+class BankAccount:
+    def __init__(self, account_number: int, balance: int):
         self.account_number = account_number
         self.balance = balance
 
-    def deposit(self, amount):
+    def deposit(self, amount: int) -> None:
         if amount > 0:
             self.balance += amount
             print(f"Deposited {amount}. New balance is {self.balance}.")
@@ -32,17 +37,18 @@ class BankAccount1:
         else:
             print('Negative amount')
 
-    def withdraw(self, amount):
+    def withdraw(self, amount: int) -> None:
         if self.balance >= amount:
             self.balance -= amount
             print(f"Withdraw {amount}. New balance is {self.balance}.")
         else:
             print("Insufficient balance.")
 
-    def get_balance(self):
-        print(f"Account balance is {self.balance}.")
+    def get_balance(self) -> int:
+        print(f"Account {self.account_number} balance is {self.balance}.")
+        return self.balance
 
-    def transfer(self, other_account, amount):
+    def transfer(self, other_account, amount: int) -> None:
         if self.balance >= amount:
             self.balance -= amount
             other_account.balance += amount
@@ -52,38 +58,20 @@ class BankAccount1:
             print("Insufficient balance.")
 
 
-vba1 = BankAccount1(123, 100)
-vba2 = BankAccount1(124, 100)
-vba1.deposit(5)
-vba1.transfer(vba2, 50)
-vba1.get_balance()
-vba2.get_balance()
+account_1 = BankAccount(1, 100)
+account_2 = BankAccount(2, 250)
+
+account_1.deposit(100)
+account_1.get_balance()
+account_1.transfer(account_2, 100)
+account_1.get_balance()
+account_2.get_balance()
 
 
-class A:
-    result = 1
 
-
-class B(A):
-    def __init__(self):
-        result = 2
-
-
-class C(B):
-    def __init__(self):
-        self.result = 3
-
-
-class D(C):
-    result = 4
-
-
-print(A.result)
-print(B.result)
-print(C.result)
-print(D.result)
-
-print(A().result)
-print(B().result)
-print(C().result)
-print(D().result)
+# vba1 = BankAccount(123, 100)
+# vba2 = BankAccount(124, 100)
+# vba1.deposit(5)
+# vba1.transfer(vba2, 50)
+# vba1.get_balance()
+# vba2.get_balance()
