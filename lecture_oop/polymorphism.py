@@ -1,4 +1,6 @@
 import math
+from abc import ABC, abstractmethod
+
 # ####### Polymorphism of operators
 # print(5 + 6)  # prints: 11
 # print('Hello, ' + 'world!')  # prints: Hello, world!
@@ -23,7 +25,14 @@ import math
 """
 
 
-class Human:
+# Абстрактний клас
+class Humanoid(ABC):
+    @abstractmethod
+    def greet(self):
+        pass
+
+
+class Human(Humanoid):
     def __init__(self, name):
         self.name = name
 
@@ -50,6 +59,17 @@ for person in humans:
     assert isinstance(person, Human)
     person.greet()
 
+print('------------------')
+
+
+def greet(humanoid: Human):
+    humanoid.greet()
+
+
+greet(human)
+greet(employee)
+print('------------------')
+
 
 class Shape:
     def __init__(self, **kwargs):
@@ -57,7 +77,6 @@ class Shape:
         self.sideA = kwargs.get('sideA')
         self.sideB = kwargs.get('sideB')
         self.sideC = kwargs.get('sideC')
-
 
     def area(self):
         pass
