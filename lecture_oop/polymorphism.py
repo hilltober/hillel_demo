@@ -58,6 +58,7 @@ class Shape:
         self.sideB = kwargs.get('sideB')
         self.sideC = kwargs.get('sideC')
 
+
     def area(self):
         pass
 
@@ -83,7 +84,13 @@ class Square(Shape):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.__side = self.sideA or self.sideB or self.sideC
+        if self.sideA or self.sideB or self.sideC:
+            self.__side = self.sideA or self.sideB or self.sideC
+        else:
+            raise KeyError(
+                f'Parameter should be in (sideA, sideB, sideC).'
+                f' Given: {kwargs}'
+            )
 
     def area(self):
         return self.__side ** 2
@@ -112,3 +119,6 @@ rectangle = Rectangle(sideA=5, sideB=6)
 for shape in [circle, square, rectangle]:
     assert isinstance(shape, Shape)
     print(shape.area())
+
+sqr = Square(vasya=5)
+print(sqr.area())
