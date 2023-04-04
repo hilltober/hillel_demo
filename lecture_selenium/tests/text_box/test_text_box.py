@@ -1,8 +1,8 @@
 import pytest
 
-from .helper import scroll_to_element, wait_to_be_clickable
-from .locators import loc_text_boxes, loc_result_table
-from .data_for_test import fields_data
+from lecture_selenium.tests.text_box.helper import scroll_to_element, wait_to_be_clickable
+from lecture_selenium.tests.text_box.locators import loc_text_boxes, loc_result_table
+from lecture_selenium.tests.text_box.data_for_test import fields_data
 
 
 @pytest.mark.usefixtures('text_box')
