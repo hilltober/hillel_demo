@@ -131,16 +131,16 @@ class BookStorePageSelenium(BookStorePage):
         raise NotImplemented
 
     def get_authors(self):
-        raise NotImplementedException
+        raise NotImplemented
 
     def get_image_sources(self):
-        raise NotImplementedException
+        raise NotImplemented
 
     def get_publishers_for_author(self, author: str):
-        raise NotImplementedException
+        raise NotImplemented
 
     def clear_search_field(self):
-        raise NotImplementedException
+        raise NotImplemented
 
     def do_search(self, search_string: str):
-        raise NotImplementedException
+        raise NotImplemented
