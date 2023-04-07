@@ -60,7 +60,7 @@ class TestBookStoreSelenium:
         cls.store = BookStorePageSelenium(driver=driver)
 
     @pytest.fixture(autouse=True)
-    def init_driver(self):
+    def init_book_store_driver(self):
         yield self.initialize_page()
 
     def test_1(self):
