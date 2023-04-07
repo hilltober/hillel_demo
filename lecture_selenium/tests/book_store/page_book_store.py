@@ -102,9 +102,7 @@ class BookStorePageSelenium(BookStorePage):
 
     def _get_element_locator_by_header_name(self, header):
         column_index = self.get_headers().index(header)
-        raw_locator = self.__books._locator._description
-        locator = f"//{''.join(raw_locator.split('//')[1::])[:-3:]}" \
-                  f"/div[{column_index + 1}]"
+        locator = f"{self.__books_loc[1]}/div[{column_index + 1}]"
         return locator
 
     def get_name(self) -> str:
@@ -134,7 +132,9 @@ class BookStorePageSelenium(BookStorePage):
         raise NotImplemented
 
     def get_image_sources(self):
-        raise NotImplemented
+        locator = f'{self._get_element_locator_by_header_name("Image")}//img'
+        elements = self.driver.find_elements(By.XPATH, locator)
+        return [data.get_attribute('src') for data in elements]
 
     def get_publishers_for_author(self, author: str):
         raise NotImplemented

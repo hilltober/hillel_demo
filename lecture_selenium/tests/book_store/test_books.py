@@ -68,4 +68,5 @@ class TestBookStoreSelenium:
         assert self.store.get_name() == 'Book Store'
         headers = self.store.get_headers()
         sort_publishers_button = self.store.get_header_button('Publisher')
+        sources = self.store.get_image_sources()
         pass

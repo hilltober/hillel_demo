@@ -5,11 +5,11 @@ class BookStorePage(ABC):
 
     @abstractmethod
     def _get_element_locator_by_header_name(self, header_name: str):
-        raise NotImplementedException
+        pass
 
     @abstractmethod
     def open(self):
-        raise NotImplementedException
+        pass
 
     @abstractmethod
     def get_name(self) -> str:
@@ -17,36 +17,36 @@ class BookStorePage(ABC):
 
     @abstractmethod
     def get_headers(self):
-        raise NotImplementedException
+        pass
 
     @abstractmethod
     def get_header_button(self, mame: str):
-        raise NotImplementedException
+        pass
 
     @abstractmethod
     def get_header_elements(self, header_name: str):
-        raise NotImplementedException
+        pass
 
     @abstractmethod
     def get_publisher_names(self):
-        raise NotImplementedException
+        pass
 
     @abstractmethod
     def get_authors(self):
-        raise NotImplementedException
+        pass
 
     @abstractmethod
     def get_image_sources(self):
-        raise NotImplementedException
+        pass
 
     @abstractmethod
     def get_publishers_for_author(self, author: str):
-        raise NotImplementedException
+        pass
 
     @abstractmethod
     def clear_search_field(self):
-        raise NotImplementedException
+        pass
 
     @abstractmethod
     def do_search(self, search_string: str):
-        raise NotImplementedException
+        pass
